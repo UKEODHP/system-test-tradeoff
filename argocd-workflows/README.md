@@ -16,7 +16,7 @@ kubectl apply -n argo -f https://github.com/argoproj/argo-workflows/releases/dow
 We can submit workflows via the Argo CLI
 
 ```bash
-argo submit -n argo --watch https://raw.githubusercontent.com/argoproj/argo-workflows/main/examples/hello-world.yaml
+argo submit -n argo --watch tests/hello-world.yaml
 ```
 
 ### View Results
@@ -50,3 +50,37 @@ Inputs can be passed to multiple steps, as well as outputs from previous steps.
 Any image may be used for any step. This will allow us to define the steps, potentially mount script files from config maps in our preferred language, and execute them sequentially or in parallel.
 
 We can also define templates, which may come in handy for similar tests, although I have not fully investigated that.
+
+### Scoring
+
+1. How easy is it to create declarative, arbitrary tests? Consider defining dependencies and passing arguments between stages.
+
+   - Tests can be declared as yaml manifests
+   - Any image can be used, and command can be set inline or mounted via file/config
+   - UI can be used to create manifest
+   - Examples can be found online
+
+   4/5
+
+2. How easy is it to execute individual or groups of tests?
+
+   - Tests can be executed via Argo CLI
+   - Tests can be executed via Argo UI
+   - Multiple tests can be run with one CLI command
+   - Workflows can call workflows, and could be used to create test suites
+
+   4/5
+
+3. How easy is it to view the results of tests? Consider live tests and previous results.
+
+   - View results from CLI
+   - View results from UI
+   - Easily view latest results
+
+   4/5
+
+4. How easy was installation of the framework? How many resources does it use?
+
+   - One line
+
+   5/5
