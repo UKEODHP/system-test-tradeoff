@@ -47,3 +47,11 @@ kustomize build deploy | envsubst | kubectl apply --server-side=true -f -  # sub
 ```
 
 From [prow-getting-started](https://docs.prow.k8s.io/docs/getting-started-deploy/).
+
+## Running a Test
+
+## Viewing Tests
+
+Visit the $PROW_HOST from your local browser. Please note that if you may be required to add this host to your local hosts file for routing.
+
+You can use the provided UI to navigate around the tests and view their status and logs.
