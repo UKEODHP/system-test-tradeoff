@@ -1,0 +1,30 @@
+metadata:
+  namespace: prow
+  name: 5b6cf9d8-c896-4edb-aaeb-13adcff76c0c
+spec:
+  agent: kubernetes
+  cluster: default
+  decoration_config:
+    gcs_configuration:
+      bucket: s3://prow-logs
+      path_strategy: explicit
+    github_api_endpoints:
+      - http://ghproxy
+      - https://api.github.com
+    github_app_id: "873436"
+    github_app_private_key_secret:
+      key: cert
+      name: github-token
+    s3_credentials_secret: s3-credentials
+  job: echo-test
+  namespace: test-pods
+  pod_spec:
+    containers:
+      - command:
+          - /bin/date
+        image: alpine
+        name: ""
+        resources: {}
+  prowjob_defaults:
+    tenant_id: GlobalDefaultID
+  report: true

@@ -50,8 +50,47 @@ From [prow-getting-started](https://docs.prow.k8s.io/docs/getting-started-deploy
 
 ## Running a Test
 
+Tests are primarily triggered by events or are defined as periodic. Tests can either be added centrally as part of the config manifest (in _deploy/prow/config-maps.yaml_), or they can be scanned remotely as part of other repos from a _.prow_ directory, similar to _.github_ actions.
+
+Some example tests are:
+
+```yaml
+periodics:
+  - interval: 10m
+    name: echo-test
+    decorate: true
+    spec:
+      containers:
+        - image: alpine
+          command: ["/bin/date"]
+postsubmits:
+  YOUR_ORG/YOUR_REPO:
+    - name: test-postsubmit
+      decorate: true
+      spec:
+        containers:
+          - image: alpine
+            command: ["/bin/printenv"]
+presubmits:
+  YOUR_ORG/YOUR_REPO:
+    - name: test-presubmit
+      decorate: true
+      always_run: true
+      skip_report: true
+      spec:
+        containers:
+          - image: alpine
+            command: ["/bin/printenv"]
+```
+
 ## Viewing Tests
 
 Visit the $PROW_HOST from your local browser. Please note that if you may be required to add this host to your local hosts file for routing.
 
 You can use the provided UI to navigate around the tests and view their status and logs.
+
+## Summary
+
+Prow seems very specific to CI/CD pipelines, and specifically GitHub. It does not seem to have the flexibility we want to run individual tests, create test suites and interact with it from the CLI.
+
+It is also quite a heavy package, containing many dependencies, and the documentation was not great in setting it up. It seems like a tool that is used by many but maintained by few.
