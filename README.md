@@ -40,3 +40,13 @@ Key questions will be taken from the trade-off issue description and asked of ea
 2. How easy is it to execute individual or groups of tests?
 3. How easy is it to view the results of tests? Consider live tests and previous results.
 4. How easy was installation of the framework? How many resources does it use?
+
+## Result
+
+I believe that either Argo Workflows or Tekton would be sufficient for our use cases. We should select Argo Workflows since we already use ArgoCD for GitOps, but either will work with it fine according to suggestions online.
+
+Prow is too intrinsically linked to the concept of CI/CD pipelines being built around event hooks for pull requests. It also seems quite specific to GitHub, which makes it less transferrable.
+
+JenkinsX was not considered as a whole because it overlaps too much with the functionality of ArgoCD, which we are happy with.
+
+TestKube seems to have the feature we want, but it is only available with the paid Pro version. It also seems quite an immature project compared with ArgoCD/Tekton, the documentation and examples online are lacking somewhat.
