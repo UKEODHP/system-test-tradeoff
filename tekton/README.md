@@ -64,7 +64,7 @@ Support for declarative triggers.
    - Additional manifest required to run Task
    - Tests can be executed via Tekton CLI
    - Multiple tests can be run with one CLI command
-   - Pipelines can cal multiple tasks and pass arguments between them
+   - Pipelines can call multiple tasks and pass arguments between them
    - Previous task run must be deleted before rerunning it
 
    2/5

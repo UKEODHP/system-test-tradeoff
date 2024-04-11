@@ -39,7 +39,7 @@ Click + Submit New Workflow and then Edit using full workflow options.
 
 ## Summary
 
-Argo Workflows seems like a very strong choice. It was very easy to set up and install and seems very light weight.
+Argo Workflows seems like a very strong choice. It was very easy to set up and install and seems very lightweight.
 
 It has both CLI and UI options. The UI option has an editor for creating workflows from scratch. From the CLI we can specify multiple files, so many workflows can be run at once. Workflows can be run in response to events, so we could create custom events to run a set of workflows to act as a test suite.
 

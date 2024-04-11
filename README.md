@@ -6,9 +6,10 @@ We wish to be able to run system tests. For example, such a test might create a 
 
 We also wish to be able to run smoke tests. These are non-disruptive tests which can run on a production platform, for example after a new deployment. These may also involve running fast-running test workflows in a test workspace, adding catalogue entries, etc.
 
-We need a framework to run these in. We have previously used Testkube in EODHP-231: TestKube system environment test suites
-DONE
-but 1) it has been difficult to create tests declaratively rather than having to run CLI tools or use a UI, and 2) there seem to be some recent licence changes and it’s not clear if it’ll be possible to use a dashboard UI.
+We need a framework to run these in. We have previously used Testkube in EODHP-231: Testkube system environment test suites but
+
+1. it has been difficult to create tests declaratively rather than having to run CLI tools or use a UI, and
+2. there seem to be some recent licence changes and it’s not clear if it’ll be possible to use a dashboard UI.
 
 An alternative may be Jenkins X (which is different to Jenkins). There is also Prow, used by the Kubernetes project: Prow (Jenkins X includes Lighthouse, which is a Prow derivative).
 
@@ -49,4 +50,4 @@ Prow is too intrinsically linked to the concept of CI/CD pipelines being built a
 
 JenkinsX was not considered as a whole because it overlaps too much with the functionality of ArgoCD, which we are happy with.
 
-TestKube seems to have the feature we want, but it is only available with the paid Pro version. It also seems quite an immature project compared with ArgoCD/Tekton, the documentation and examples online are lacking somewhat.
+Testkube seems to have the feature we want, but it is only available with the paid Pro version. It also seems quite an immature project compared with ArgoCD/Tekton, the documentation and examples online are lacking somewhat.
