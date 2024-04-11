@@ -120,7 +120,9 @@ It is also quite a heavy package, containing many dependencies, and the document
 
 4. How easy was installation of the framework? How many resources does it use?
 
-   - Very complicated schemas
+   - Very complicated architecture
+   - Lots of dependencies
+   - Very resource intensive
    - Insufficient documentation
 
-   0/5
+   1/5
